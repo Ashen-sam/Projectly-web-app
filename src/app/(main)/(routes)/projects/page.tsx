@@ -1,0 +1,87 @@
+"use client";
+import { Button, Input } from "@/components";
+import {
+  ArrowUpDown,
+  Calendar,
+  MonitorSmartphone,
+  PackagePlus,
+  TabletSmartphone,
+} from "lucide-react";
+import Link from "next/link";
+import { projectsData } from "../home/_components/projects";
+import { useEffect, useState } from "react";
+
+export default function Projects() {
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  };
+
+  useEffect(() => {
+    getData();
+  }, [data]);
+
+  return (
+    <div>
+      <div className="flex gap-2">
+        <Input placeholder="find project ..." />
+        <Button size={"sm"}>
+          <PackagePlus />
+          <div className="sm:block hidden">New project</div>
+        </Button>
+        <Button size={"sm"}>
+          <ArrowUpDown />
+          <div className="sm:block hidden">Sort</div>
+        </Button>
+        <Button size={"sm"}>Type </Button>
+      </div>
+      <div className="mt-4 max-h-[750px] overflow-y-auto grid md:grid-cols-2  lg:grid-cols-3  gap-3 ">
+        {projectsData?.slice(0, 10).map((data, index) => {
+          return (
+            <Link key={index} href={`projects/${data.id}`}>
+              <div
+                key={index}
+                className="rounded-md dark:border group hover:bg-secondary/70 dark:hover:bg-secondary/20 min-h-[155px] cursor-pointer dark:bg-[#151b25]  dark:border-gray-700 font-medium shadow-sm border p-3  flex-1  text-sm"
+              >
+                <div className="flex justify-between items-center mb-2">
+                  <div className="flex items-center gap-4 ">
+                    <div className="w-max p-1 rounded dark:bg-slate-500 bg-slate-100">
+                      {data.projectType === "web" ? (
+                        <TabletSmartphone size={17} />
+                      ) : (
+                        <MonitorSmartphone size={17} />
+                      )}
+                    </div>
+                    <div className="font-semibold sm:text-lg">
+                      {data.projectName}
+                    </div>
+                  </div>
+                  <div
+                    className={"px-2 py-1 rounded text-xs text-white"}
+                    style={{ backgroundColor: `${data.statusColor}` }}
+                  >
+                    {data.projectPriority}
+                  </div>
+                </div>
+                <div className="line-clamp-3 dark:text-zinc-300 max-w-4xl sm:text-[13px] ">
+                  {data.projectShortDesc} Lorem ipsum dolor sit amet consectetur
+                  adipisi
+                </div>
+
+                <div className="flex justify-between items-center mt-4">
+                  <div className="flex items-center gap-2">
+                    <Calendar size={16} />
+                    <div className="text-xs">{data.projectDate}</div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
