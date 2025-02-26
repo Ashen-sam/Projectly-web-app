@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.back_container {
+  background-image: url('../../public/back.svg');
+  background-repeat: repeat;
+  background-size: 24px 24px;
+  height: 100vh;
+  overflow:hidden;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -157,6 +165,7 @@
   }
 }
 
+
 @layer base {
   * {
     @apply border-border;
@@ -165,6 +174,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.box_effect {
+  @apply rounded-md hover:bg-secondary/70 dark:hover:bg-secondary/20 dark:bg-dark-bg-color dark:border-gray-700 shadow-sm  border
+}
+
+.red{
+  @apply bg-red-500
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 8px;

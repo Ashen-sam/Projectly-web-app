@@ -13,6 +13,7 @@ interface ICommonDialog {
   DialogTitleIcon?: ReactNode;
   className: string;
   buttonText: string;
+  open: boolean;
 }
 
 export const CommonDialog: React.FC<ICommonDialog> = ({
@@ -21,9 +22,10 @@ export const CommonDialog: React.FC<ICommonDialog> = ({
   className,
   buttonText,
   DialogTitleIcon,
+  open,
 }) => {
   return (
-    <Dialog>
+    <Dialog open={open}>
       <DialogTrigger className="text-[12px] border-2 border-[#1877F2] text-white px-2 py-1 rounded bg-[#1E90FF]">
         {buttonText}
       </DialogTrigger>

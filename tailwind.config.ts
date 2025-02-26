@@ -7,9 +7,14 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
+  safelist: ['red'],
   theme: {
     extend: {
       colors: {
+        primary_color: "#0969DA",
+        "dark-bg-color": "#151b25",
+        orange: "red",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -68,5 +73,6 @@ export default {
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

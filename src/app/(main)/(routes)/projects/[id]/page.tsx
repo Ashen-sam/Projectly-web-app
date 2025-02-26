@@ -2,7 +2,7 @@ export default async function Overview({
   params,
 }: {
   params: {
-    id: string; // The `id` is passed as a route parameter
+    id: string;
   };
 }) {
   // Fetch data for the specific item by its `id`

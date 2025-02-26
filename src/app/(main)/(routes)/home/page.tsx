@@ -1,47 +1,51 @@
 "use client";
-import RecentProjects from "./_components/recent-projects";
+import { useGetAllProjectsQuery } from "@/services/projects";
+import { RecentProjects, UploadContainer, UserProfile } from "./_components";
+import { ProjectChart } from "./_components/project-charts";
+import { PackagePlus } from "lucide-react";
+import { Button } from "@/components";
 
 export default function Home() {
-  // const [projects, setProjects] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
-
-  // useEffect(() => {
-  //   // Define the fetch function
-  //   const fetchData = async () => {
-  //     const url = "https://pmzlmetpnoqiizynjndb.supabase.co/rest/v1/projects";
-  //     const headers = new Headers({
-  //       apikey:
-  //         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtemxtZXRwbm9xaWl6eW5qbmRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYyMzQ5MzQsImV4cCI6MjA1MTgxMDkzNH0.fNxC732nZAFJQLkYyHK8TnB7U_rpbJjx6du6EJ5Et0M",
-  //       Authorization:
-  //         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtemxtZXRwbm9xaWl6eW5qbmRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYyMzQ5MzQsImV4cCI6MjA1MTgxMDkzNH0.fNxC732nZAFJQLkYyHK8TnB7U_rpbJjx6du6EJ5Et0M",
-  //     });
-
-  //     try {
-  //       const response = await fetch(url, { headers });
-  //       if (!response.ok) {
-  //         throw new Error(
-  //           "Network response was not ok: " + response.statusText
-  //         );
-  //       }
-  //       const data = await response.json();
-  //       setProjects(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //       console.error("Fetch error:", error);
-  //     }
-  //     setLoading(false);
-  //   };
-
-  //   // Call the fetch function
-  //   fetchData();
-  // }, [projects]);
-
+  const { data: projectData } = useGetAllProjectsQuery();
   return (
-    <div className=" ">
-      {/* <AddProject />
-        <AddProject /> */}
-      <RecentProjects />
+    <div className=" relative   ">
+     
+      <div className="mb-2 ">
+        <UserProfile />
+      </div>
+      <div className="flex  gap-2   ">
+        <div
+          className={` ${projectData?.length === 20 ? "w-full" : "w-3/4"}  `}
+        >
+          
+            <div>
+              <div className="text-sm my-2 ">Recent projects</div>
+              <RecentProjects />
+            </div>
+
+          <UploadContainer />
+          {/* <div className="border rounded-md shadow-sm my-2 dark:border-gray-700 dark:bg-dark-bg-color  w-full h-full flex items-center flex-col gap-3 justify-center">
+            <PackagePlus size={60} strokeWidth={1.4} className="text-primary_color" />
+            <div className="flex flex-col items-center  gap-2 justify-center">
+              <Button size={"sm"}>create project</Button>
+              <div className="text-xs">
+                create your project width projectly{" "}
+              </div>
+            </div>
+          </div> */}
+        </div>
+
+        {projectData?.length === 0 ? (
+          " "
+        ) : (
+          <div className="">
+            <div className="text-sm my-2 mt-2  ">Overall percentages</div>
+            <div className="h-full">
+              <ProjectChart />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

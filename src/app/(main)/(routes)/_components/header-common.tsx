@@ -1,24 +1,12 @@
 import { ModeToggle } from "@/components";
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-interface IHeaderCommon {
-  title?: string;
-}
-export const HeaderCommon: React.FC<IHeaderCommon> = ({ title }) => {
+export const HeaderCommon: FunctionComponent = () => {
+
   return (
-    <div className="w-full p-2  flex justify-between items-center">
-      <div className="text-sm">{title}</div>
-
-      <div>
-        <ul className="flex">
+    <div className="w-full  p-2  flex justify-between items-center">
+      <div  className="flex">
           <ModeToggle />
-
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
-        </ul>
       </div>
     </div>
   );

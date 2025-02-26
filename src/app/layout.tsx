@@ -1,7 +1,8 @@
+import { ReduxProvider } from "@/components/redux-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,11 +14,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "100",
-});
+// const roboto = Roboto({
+//   subsets: ["latin"],
+//   display: "swap",
+//   weight: "100",
+// });
 
 export const metadata: Metadata = {
   title: "Projectly web",
@@ -34,7 +35,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body
           suppressHydrationWarning
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased `}
         >
           <ThemeProvider
             attribute="class"
@@ -42,8 +43,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {/* <Providers> */}
-            {children}
+            <ReduxProvider>
+              <div className="">{children}</div>
+            </ReduxProvider>
           </ThemeProvider>
         </body>
       </html>

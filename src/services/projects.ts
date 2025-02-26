@@ -1,12 +1,13 @@
+import { IProjectData } from "@/app/(main)/(routes)/home/_components/projects";
 import { BaseApi } from "./BaseApi";
 
-const Projects = BaseApi.injectEndpoints({
+export const Projects = BaseApi.injectEndpoints({
   endpoints: (build) => ({
-    getProjects: build.query<unknown, void>({
-      query: () => "/posts",
+    getAllProjects: build.query<IProjectData[], void>({
+      query: () => "projects",
     }),
   }),
-  overrideExisting: false, // Optional
-});
 
-export const {} = Projects;
+  overrideExisting: false,
+});
+export const { useGetAllProjectsQuery } = Projects;
