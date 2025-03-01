@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components";
+import { Avatar, Button } from "@/components";
 import { UserPen } from "lucide-react";
 import Image from "next/image";
 
@@ -13,26 +13,15 @@ interface IUserProfile {
 export const UserProfile: FunctionComponent<IUserProfile> = ({}) => {
 
   return (
-    <div className="flex bg-white dark:border-gray-700 dark:bg-dark-bg-color  lg:flex-row flex-col border rounded-sm shadow-sm relative">
-      <div className=" lg:w-1/3  flex gap-3 items-center px-4 py-2 ">
+    <div className="flex  dark:border-gray-700   lg:flex-row flex-col items-center   relative">
+      <div className="  flex gap-3 items-center px-4 py-2 w-full ">
         <div className=" rounded-full">
-          <Image
-            className="dark:hidden object-contain "
-            alt="engineer"
-            height={100}
-            width={100}
-            src={"/engineer.svg"}
-          />
-          <Image
-            className="dark:block hidden  object-contain"
-            alt="engineer"
-            height={100}
-            width={100}
-            src={"/engineer-dark.svg"}
-          />
+          <div className="border text-lg text-red-500 font-semibold border-red-200 rounded-sm bg-red-50 px-4 py-2">
+            A
+          </div>
         </div>
 
-        <div className="mb-3 w-full ">
+        <div className=" w-full  flex justify-between items-center ">
           <div className=" ">
             <div className="text-xl font-bold  text-primary/80">
               Ashen Samarasekera
@@ -45,13 +34,22 @@ export const UserProfile: FunctionComponent<IUserProfile> = ({}) => {
               View profile
              </div>
             </div>
+           
+          </div>
+        <div className="flex items-center gap-2">
+        <Button
+              size={"sm"}
+              className=" rounded-sm "
+            >
+             Add project
+            </Button>
             <Button
               size={"sm"}
-              className="absolute -top-1 right-1 rounded-sm mt-2 "
+              className=" rounded-sm "
             >
               <UserPen />
             </Button>
-          </div>
+        </div>
         </div>
       </div>
     </div>

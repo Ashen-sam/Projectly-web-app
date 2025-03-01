@@ -44,7 +44,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <ReduxProvider>
-              <div className="">{children}</div>
+             {children}
             </ReduxProvider>
           </ThemeProvider>
         </body>

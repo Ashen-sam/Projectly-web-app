@@ -7,9 +7,9 @@ export default function ProductLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="p-3 flex flex-col min-h-screen dark:bg-[#1F1F1F]">
+    <div className="p-3 flex flex-col min-h-screen  dark:bg-[#1F1F1F]">
       <Header />
-      <div className="flex-1 flex">{children}</div>
+      <div className="flex-1 flex back_container w-full  m-auto ">{children}</div>
       <div className="mt-auto">
         <Footer />
       </div>

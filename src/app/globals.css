@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 .back_container {
-  background-image: url('../../public/back.svg');
+  background-image: url('../../public/back-1.svg');
   background-repeat: repeat;
-  background-size: 24px 24px;
-  height: 100vh;
+  background-size: 25px 25px;
+  overflow:hidden;
+}
+
+.back_container_dark{
+  background-image: url('../../public/back-1-dark.svg');
+  background-repeat: repeat;
+  background-size: 25px 25px;
   overflow:hidden;
 }
 
@@ -176,7 +182,7 @@
 }
 
 .box_effect {
-  @apply rounded-md hover:bg-secondary/70 dark:hover:bg-secondary/20 dark:bg-dark-bg-color dark:border-gray-700 shadow-sm  border
+  @apply rounded-md  dark:hover:bg-secondary/20 dark:bg-dark-bg-color dark:border-gray-700 shadow-sm  border
 }
 
 .red{
