@@ -13,7 +13,7 @@ export const UploadContainer: FunctionComponent = () => {
   ));
 
   return (
-    <div className="w-full ine-clamp-5 box_effect bg-gray-50  p-3 flex items-center justify-between">
+    <div className="w-full ine-clamp-5 box_effect bg-white  p-3 flex items-center justify-between">
       <div className="flex gap-4 items-center ">
         <PackageOpen size={33} strokeWidth={1.5} className="text-primary_color" />
         <div className="flex flex-col">
@@ -27,10 +27,10 @@ export const UploadContainer: FunctionComponent = () => {
       </div>
       <input {...getInputProps()} />
       <div {...getRootProps({ className: "dropzone flex gap-2" })}>
-        <Button variant={"outline"}  size={"sm"}>
+        <Button variant={'custom_btn'}  size={"sm"}>
           <FolderOpen size={30} /> view
         </Button>
-        <Button variant={'outline'} size={"sm"} onClick={open}>
+        <Button variant={'custom_btn'} size={"sm"} onClick={open}>
           <Upload />
           upload{" "}
         </Button>

@@ -25,7 +25,7 @@ export default function Header() {
           )}
         </li>
         <li>
-          <Button className="text-xs" size={"sm"} variant={"default"}>
+          <Button  className="text-xs" size={"sm"} variant={"custom_btn"}>
             Get Projectly free
           </Button>{" "}
         </li>

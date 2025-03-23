@@ -14,7 +14,7 @@ export default function MainLayout({
             <HeaderCommon />
             <HeaderSecondary />
           </div>
-          <div className="bg-gray-50 h-[95dvh]">
+          <div className="bg-slate-50 dark:bg-[#1F1F1F]  h-[95dvh]">
             <div className=" px-4 items-center mx-auto justify-center w-full max-w-7xl mt-6 ">
               {children}
             </div>

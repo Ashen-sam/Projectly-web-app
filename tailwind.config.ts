@@ -13,7 +13,7 @@ export default {
     extend: {
       colors: {
         primary_color: "#0969DA",
-        "dark-bg-color": "#151b25",
+        "dark-bg-color": "#1F1F1F",
         orange: "red",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

@@ -22,7 +22,7 @@ export const RecentProjects = () => {
                       )}
                     </div>
                     <div className="font-semibold sm:text-md">
-                      {data.projecttitle}
+                      {data.projecttitle} ASD
                     </div>
                   </div>
                   <div
@@ -39,13 +39,13 @@ export const RecentProjects = () => {
                 </div>
                 <div className="p-2">
                   <div className="line-clamp-2 dark:text-zinc-300 w-full  text-[13px] font-normal ">
-                    {data.projectdescription}
+                    {data.projectdescription} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, dolorem. Est placeat ipsum dolorem voluptates, dolore maxime nulla deserunt beatae, quisquam omnis ipsa ut, perspiciatis atque veniam dolor consectetur doloribus tempore illo. Ut eveniet laudantium sed error? Labore, rem earum!
                   </div>
 
                   <div className="flex justify-between items-center mt-4">
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
-                      <div className="text-xs">{data.startdate}</div>
+                      <div className="text-xs">{data.startdate} 123123</div>
                     </div>
                   </div>
                 </div>

@@ -21,13 +21,13 @@ export default function Home() {
         that help you create, organize, and execute effortlessly. Experience a
         smarter way to work and achieve more every day.
       </h3>
-      <Button suppressHydrationWarning className="min-w-[100px] flex ">
+      <Button variant={'custom_btn'} size={'sm'} suppressHydrationWarning className="min-w-[100px] flex ">
         {!isLoaded ? (
           <Spinner />
         ) : isSignedIn ? (
           <Link href={"/home"}>Start Projectly </Link>
         ) : (
-          <SignInButton mode="modal">Get Projectly free </SignInButton>
+          <SignInButton  mode="modal">Get Projectly free </SignInButton>
         )}
         <ArrowRight />
       </Button>

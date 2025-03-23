@@ -182,8 +182,10 @@
 }
 
 .box_effect {
-  @apply rounded-md  dark:hover:bg-secondary/20 dark:bg-dark-bg-color dark:border-gray-700 shadow-sm  border
+  @apply rounded-md  dark:bg-dark-bg-color dark:border-gray-700 shadow-sm  border
 }
+
+
 
 .red{
   @apply bg-red-500

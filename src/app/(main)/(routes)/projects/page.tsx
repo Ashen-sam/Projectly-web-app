@@ -32,20 +32,18 @@ export default function Projects() {
       <div className="flex gap-2 sm:items-center items-start sm:flex-row flex-col-reverse ">
         <Input placeholder="find project ..." />
         <div className="flex gap-2 items-center">
-          <Button size={"sm"} onClick={handleAddProjectOpen}>
+          <Button variant={'custom_btn'} size={"sm"} onClick={handleAddProjectOpen}>
             <PackagePlus />
             <div className="sm:block hidden">New project</div>
           </Button>
-          <Button size={"sm"}>
+          <Button variant={'custom_btn'} size={"sm"}>
             <ArrowUpDown />
             <div className="sm:block hidden">Sort</div>
           </Button>
-          <Button size={"sm"}>Type </Button>
-          <Button size={"sm"}>Category </Button>
+          <Button variant={'custom_btn'} size={"sm"}>Type </Button>
+          <Button variant={'custom_btn'} size={"sm"}>Category </Button>
         </div>
       </div>
-      
-
       {projectLoading ? (
         <SkeletonLoader />
       ) : (
